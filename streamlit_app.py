@@ -2,7 +2,7 @@ import streamlit as st
 import pyodbc
 
 
-con_str = f'Driver={{SQL Server}};Server={"vmindwebca01p01,8501"};Database={database};Uid={username};Pwd={password};Encrypt=Yes;TrustServerCertificate=No;Authentication={auth};'
+con_str = f'Driver={{SQL Server}};Server={"vmindwebca01p01,8501"};Database={"DB_GERD_ReportesIngenieria_QAS"};Uid={"sqlsapconsulta"};Pwd={"sqlsapconsulta"};Encrypt=Yes;TrustServerCertificate=No;Authentication={"ActiveDirectoryPassword"};'
 # Initialize connection.
 # Uses st.cache_resource to only run once.
 @st.cache_resource
