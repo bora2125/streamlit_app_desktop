@@ -1,21 +1,13 @@
 import streamlit as st
 import pyodbc
 
+
+con_str = f'Driver={driver};Server={server};Database={database};Uid={username};Pwd={password};Encrypt=Yes;TrustServerCertificate=No;Authentication={auth};'
 # Initialize connection.
 # Uses st.cache_resource to only run once.
 @st.cache_resource
 def init_connection():
-    return pyodbc.connect(
-        "DRIVER={SQL Server};SERVER="
-        + st.secrets["server"]
-        + ";DATABASE="
-        + st.secrets["database"]
-        + ";UID="
-        + st.secrets["username"]
-        + ";PWD="
-        + st.secrets["password"]
-    )
-
+    return pyodbc.connect(con_str)
 conn = init_connection()
 
 # Perform query.
